@@ -49,6 +49,10 @@ export const quantityOfGoodsByPriceAndStock: QuantityOfGoodsByPriceAndStock = {
 };
 
 const createFiltersHeader = function () {
+  asideFilters.className = 'filters';
+
+  const mainElement = document.querySelector('main');
+
   const filtersHeader = document.createElement('header');
   filtersHeader.className = 'filters__header';
 
@@ -60,6 +64,7 @@ const createFiltersHeader = function () {
 
   filtersHeader.append(buttonResetFilters, buttonCopyLink);
   asideFilters?.append(filtersHeader);
+  mainElement?.prepend(asideFilters);
 };
 
 createFiltersHeader();
